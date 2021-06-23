@@ -226,6 +226,7 @@ ja:
     author: "著者名"
     picture: "表紙写真"
     back: "もどる"
+    sure: "本当に削除していいですか?"
   notice:
     create: "本を登録しました!"
     update: "本を更新しました!"
