@@ -10,7 +10,6 @@ ja:
         memo: メモ  #g
         picture: 画像  #g
         title: 題名  #g
-
       user:
         name: 氏名
         postal_code: 郵便番号
