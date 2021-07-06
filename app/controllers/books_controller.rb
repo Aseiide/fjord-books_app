@@ -1,12 +1,14 @@
 # frozen_string_literal: true
 
 class BooksController < ApplicationController
+  PAGE_PER = 10
   before_action :set_book, only: %i[show edit update destroy]
 
   # GET /books
   # GET /books.json
   def index
     @books = Book.all
+    @books = Book.page(params[:page]).per(PAGE_PER).order('updated_at DESC') # 降順で一覧を表示する
   end
 
   # GET /books/1
