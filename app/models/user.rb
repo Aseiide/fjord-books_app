@@ -27,7 +27,7 @@ class User < ApplicationRecord
   end
 
   # 現在のユーザーがフォローしていたらtrueを返す
-  def following?
+  def following?(other_user)
     followings.include?(other_user)
   end
 end
