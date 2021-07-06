@@ -18,7 +18,7 @@ class User < ApplicationRecord
 
   # フォローする
   def follow(other_user)
-    follwing << other_user
+    followings << other_user
   end
 
   # フォロー解除
