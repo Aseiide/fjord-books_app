@@ -1,0 +1,12 @@
+<h1>ユーザー一覧</h1>
+<ul>
+  <% @users.each do |user| %>
+  <li><a href="users/<%= user.id %>"><%= user.name %></li>
+  <% end %>
+</ul>
+
+<br>
+
+<%= link_to t('views.common.back'), :back %>
+<%= link_to "書籍一覧へ戻る", books_path%>
+<%= paginate @users%>
