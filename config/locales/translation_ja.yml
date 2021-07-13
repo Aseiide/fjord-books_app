@@ -4,6 +4,7 @@ ja:
       book: 本  #g
       user: ユーザ
       report: 日報
+      comment: コメント
 
     attributes:
       book:
@@ -23,3 +24,7 @@ ja:
         body: 本文
         created_at: 作成日時
         updated_at: 更新日時
+      comment:
+        comment: コメント
+        body: コメント
+        created_at: 作成日時
