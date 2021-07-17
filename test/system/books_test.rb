@@ -7,9 +7,9 @@ class BooksTest < ApplicationSystemTestCase
     @book = books(:cherry_book)
 
     visit root_path
-    fill_in "Eメール", with: "alice@example.com"
-    fill_in "パスワード", with: "password"
-    click_on "ログイン"
+    fill_in 'Eメール', with: 'alice@example.com'
+    fill_in 'パスワード', with: 'password'
+    click_on 'ログイン'
   end
 
   test 'visiting the books#index' do
@@ -17,8 +17,8 @@ class BooksTest < ApplicationSystemTestCase
     assert_selector 'h1', text: '本'
   end
 
-  test "visiting the books#show" do
-    click_on "詳細"
+  test 'visiting the books#show' do
+    click_on '詳細'
     assert_selector 'h1', text: '本の詳細'
   end
 
@@ -42,7 +42,7 @@ class BooksTest < ApplicationSystemTestCase
   test 'updating a Book' do
     click_on '編集'
 
-    fill_in "タイトル", with: @book.title
+    fill_in 'タイトル', with: @book.title
     fill_in 'メモ', with: @book.memo
     fill_in '著者', with: @book.author
 
@@ -59,8 +59,8 @@ class BooksTest < ApplicationSystemTestCase
     end
 
     assert_text '本が削除されました。'
-    assert_no_text "Ruby超入門"
-    assert_no_text "わかりやすい"
+    assert_no_text 'Ruby超入門'
+    assert_no_text 'わかりやすい'
     assert_no_text '@igaiga'
   end
 end

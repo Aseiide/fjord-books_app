@@ -7,24 +7,24 @@ class ReportsTest < ApplicationSystemTestCase
     @report = reports(:test_report)
 
     visit root_path
-    fill_in "Eメール", with: "alice@example.com"
-    fill_in "パスワード", with: "password"
-    click_on "ログイン"
+    fill_in 'Eメール', with: 'alice@example.com'
+    fill_in 'パスワード', with: 'password'
+    click_on 'ログイン'
   end
 
   test 'visiting the reports#index' do
-    click_on "日報"
+    click_on '日報'
     assert_selector 'h1', text: '日報'
   end
 
-  test "visiting the reports#show " do
-    click_on "日報"
-    click_on "詳細"
+  test 'visiting the reports#show ' do
+    click_on '日報'
+    click_on '詳細'
     assert_selector 'h1', text: '日報の詳細'
   end
 
   test 'creating a Report' do
-  visit reports_path
+    visit reports_path
     click_on '新規作成'
 
     fill_in 'タイトル', with: @report.title
@@ -38,9 +38,9 @@ class ReportsTest < ApplicationSystemTestCase
 
   test 'updating a Report' do
     click_on '日報'
-    click_on "編集"
+    click_on '編集'
 
-    fill_in "タイトル", with: @report.title
+    fill_in 'タイトル', with: @report.title
     fill_in '内容', with: @report.content
 
     click_on '更新する'
@@ -59,7 +59,7 @@ class ReportsTest < ApplicationSystemTestCase
     end
 
     assert_text '日報が削除されました。'
-    assert_no_text "Railsでテストを書く"
-    assert_no_text "システムテストを書いた"
+    assert_no_text 'Railsでテストを書く'
+    assert_no_text 'システムテストを書いた'
   end
 end
