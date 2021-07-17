@@ -12,9 +12,14 @@ class BooksTest < ApplicationSystemTestCase
     click_on "ログイン"
   end
 
-  test 'visiting the index' do
+  test 'visiting the books#index' do
     visit books_url
     assert_selector 'h1', text: '本'
+  end
+
+  test "visiting the books#show" do
+    click_on "詳細"
+    assert_selector 'h1', text: '本の詳細'
   end
 
   test 'creating a Book' do
@@ -54,5 +59,8 @@ class BooksTest < ApplicationSystemTestCase
     end
 
     assert_text '本が削除されました。'
+    assert_no_text "Ruby超入門"
+    assert_no_text "わかりやすい"
+    assert_no_text '@igaiga'
   end
 end
