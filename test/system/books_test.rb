@@ -4,11 +4,11 @@ require 'application_system_test_case'
 
 class BooksTest < ApplicationSystemTestCase
   setup do
-    @book = books(:cherry_book)
-
+    @book = create(:book)
+    user = create(:user)
     visit root_path
-    fill_in 'Eメール', with: 'alice@example.com'
-    fill_in 'パスワード', with: 'password'
+    fill_in 'Eメール', with: user.email
+    fill_in 'パスワード', with: user.password
     click_on 'ログイン'
   end
 

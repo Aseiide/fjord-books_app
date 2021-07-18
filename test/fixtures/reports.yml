@@ -1,6 +1,0 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-test_report:
-  user: alice
-  title: Railsでテストを書く
-  content: システムテストを書いた
