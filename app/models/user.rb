@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one_attached :avatar
+  has_many :active_relationships, class_name: "Relationship",
+                                  foreign_key: "followed_id",
+                                  dependent: :destroy
 end
