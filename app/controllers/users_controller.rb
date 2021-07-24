@@ -8,4 +8,18 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
+
+  def followings
+    @title = User.human_attribute_name(:followings)
+    @user = User.find(params[:id])
+    @users = @user.followings
+    render 'users'
+  end
+
+  def followers
+    @title = User.human_attribute_name(:followers)
+    @user = User.find(params[:id])
+    @users = @user.followers
+    render 'users'
+  end
 end
