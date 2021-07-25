@@ -5,7 +5,7 @@ class ReportsController < ApplicationController
 
   # GET /reports
   def index
-    @reports = Report.all
+    @reports = Report.all.order(updated_at: :desc).page(params[:page])
   end
 
   # GET /reports/1
