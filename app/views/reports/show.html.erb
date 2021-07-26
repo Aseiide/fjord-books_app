@@ -1,0 +1,25 @@
+<p>
+  <strong><%= t('views.common.created_at')%></strong>
+  <%= @report.created_at.to_s(:datetime_jp) %>
+</p>
+
+<p>
+  <strong><%= t('views.common.updated_at')%></strong>
+  <%= @report.updated_at.to_s(:datetime_jp) %>
+</p>
+
+<p>
+  <strong><%= t('views.common.title')%></strong>
+  <%= @report.title %>
+</p>
+
+<p>
+  <strong><%= t('views.common.body')%></strong>
+  <%= @report.body %>
+</p>
+
+<%= render partial: 'comments/form', locals: {commentable: @report} %>
+<%= render partial: 'comments/comments', locals: {commentable: @report} %>
+
+<%= link_to t('views.common.edit'), edit_report_path(@report) %> |
+<%= link_to t('views.common.back'), reports_path %>
