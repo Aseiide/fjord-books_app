@@ -11,6 +11,24 @@ class UserTest < ActiveSupport::TestCase
     assert_equal 'Foo Bar', user.name_or_email
   end
 
+  test '#following?' do
+    me = User.create!(email: 'me@example.com', password: 'password')
+    she = User.create!(email: 'she@example.com', password: 'password')
+
+    assert_not me.following?(she)
+    Relationship.create!(following_id: she.id, follower_id: me.id)
+    assert me.following?(she)
+  end
+
+  test '#followed_by?' do
+    me = User.create!(email: 'me@example.com', password: 'password')
+    she = User.create!(email: 'she@example.com', password: 'password')
+
+    assert_not she.following?(me)
+    Relationship.create!(following_id: me.id, follower_id: she.id)
+    assert she.following?(me)
+  end
+
   test '#follow' do
     me = User.create!(email: 'me@example.com', password: 'password')
     she = User.create!(email: 'she@example.com', password: 'password')
@@ -18,6 +36,7 @@ class UserTest < ActiveSupport::TestCase
     assert_not me.following?(she)
     me.follow(she)
     assert me.following?(she)
+    assert she.followed_by?(me)
   end
 
   test '#unfollow' do
