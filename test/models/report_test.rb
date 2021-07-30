@@ -11,8 +11,8 @@ class ReportTest < ActiveSupport::TestCase
   end
 
   test '#created_on' do
-    user = User.create!(email: 'user@example.com', password: 'password')
-    report = Report.create!(user: user, title: '日報テスト', content: 'こんにちは')
+    user = build(:user)
+    report = create(:report)
 
     assert report.created_on
     assert_not_equal report.created_at, report.created_on
