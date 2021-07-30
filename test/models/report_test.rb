@@ -11,7 +11,6 @@ class ReportTest < ActiveSupport::TestCase
   end
 
   test '#created_on' do
-    user = build(:user)
     report = create(:report)
 
     assert report.created_on
